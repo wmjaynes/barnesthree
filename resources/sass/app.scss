@@ -1,9 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
-
 @import "variables";
-
-
 @import "../../node_modules/bulma/bulma.sass";
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -18,41 +15,55 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: $dartmouth-green;
 }
-.content table {
-  width: auto;
-  margin-left: 40pt;
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: unset;
+  }
 }
 
-.navbar {
-  background-color: $dartmouth-light;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  padding-left: 1rem;
-}
-.navbar-brand, .navbar-tabs {
-  min-height: 2.25rem;
-  //background-color: $dartmouth-light;
-}
+  .container {
+    margin: 0 1rem;
+  }
 
-@media screen and (min-width: 1024px) {}
-.navbar {
-  min-height: 2.25rem;
-}
+  .content table {
+    width: auto;
+    margin-left: 2%;
+  }
+
+  .navbar {
+    background-color: $dartmouth-light;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding-left: 1rem;
+  }
+
+  .navbar-brand, .navbar-tabs {
+    min-height: 2.25rem;
+    //background-color: $dartmouth-light;
+  }
+
+  @media screen and (min-width: 1024px) {
+  }
+
+  .navbar {
+    min-height: 2.25rem;
+  }
 
 
-.navbar-item {
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0rem 0.75rem;
-}
+  .navbar-item {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0 0.75rem;
+  }
 
-a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover,
-a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within,
-.navbar-link:hover, .navbar-link.is-active {
-  background-color: $dartmouth-green;
-  color: $dartmouth-dark;
-}
+  a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover,
+  a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within,
+  .navbar-link:hover, .navbar-link.is-active {
+    background-color: $dartmouth-green;
+    color: $dartmouth-dark;
+  }
 
 
 

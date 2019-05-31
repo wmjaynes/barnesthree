@@ -25,13 +25,13 @@
                     </button>
                 </p>
 
-                <p class="control">
-                    <label class="checkbox">
-                        <input type="checkbox" v-model="showPublishedDirectionsOnly">
-                        Display only dances with instructions in the database.
-                    </label>
-                </p>
             </div>
+            <p class="control">
+                <label class="checkbox">
+                    <input type="checkbox" v-model="showPublishedDirectionsOnly">
+                    Display only dances with instructions in the database.
+                </label>
+            </p>
         </div>
         <div class="box">
             <p>Click on the rectangles to choose the columns you want to display. Click on a column heading to sort on
@@ -44,46 +44,41 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-    <table class="table is-striped is-narrow is-fullwidth is-bordered">
-        <thead class="has-text-centered">
-        <tr>
-            <template v-for="column in response.displayable">
-                <th v-if="getVisibleColumns().includes(column)">
-                            <span class="sortable" @click="sortBy(column)"
+    <div class="scrolling-wrapper">
+        <table class="table is-striped is-narrow  is-bordered">
+            <thead class="has-text-centered">
+            <tr>
+                <template v-for="column in response.displayable">
+                    <th v-if="getVisibleColumns().includes(column)">
+                            <span @click="sortBy(column)" class="sortable"
                                   v-html="response.custom_columns[column] || column ">
                             </span>
 
-                    <div
-                            class="arrow"
-                            v-if="sort.key === column"
-                            :class="{ 'arrow--asc': sort.order === 'asc', 'arrow--desc': sort.order === 'desc' }"
-                    ></div>
-                </th>
-            </template>
-        </tr>
-        </thead>
-        <tbody>
+                        <div
+                                :class="{ 'arrow--asc': sort.order === 'asc', 'arrow--desc': sort.order === 'desc' }"
+                                class="arrow"
+                                v-if="sort.key === column"
+                        ></div>
+                    </th>
+                </template>
+            </tr>
+            </thead>
+            <tbody>
 
-        <tr v-for="record in filteredRecords">
+            <tr v-for="record in filteredRecords">
 
-            <template v-for="columnValue, column in record">
+                <template v-for="columnValue, column in record">
 
-                <td v-if="getVisibleColumns().includes(column)" v-html="record[response.custom_display_instead_of_columns[column]] || columnValue">
-                </td>
+                    <td v-html="record[response.custom_display_instead_of_columns[column]] || columnValue"
+                        v-if="getVisibleColumns().includes(column)">
+                    </td>
 
-            </template>
+                </template>
 
-        </tr>
-        </tbody>
-    </table>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
 
@@ -288,8 +283,22 @@
     }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     @import '~@/_variables.scss';
+
+    @media screen and (max-width: 767px) {
+        .scrolling-wrapper {
+            margin-bottom: 18.75px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+    }
+
+    .scrolling-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 
     .sortable {
         cursor: pointer;
@@ -361,6 +370,8 @@
 
     .table {
         line-height: 1;
+        width: 100%;
+        /*table-layout: fixed;*/
     }
     .table th {
         text-align: center;
@@ -371,17 +382,4 @@
     }
 
 
-    .barnes-table {
-        table-layout: fixed;
-        width: 100%;
-        white-space: nowrap;
-    }
-
-    .barnes-table td {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-all;
-        word-wrap: break-word;
-    }
 </style>
