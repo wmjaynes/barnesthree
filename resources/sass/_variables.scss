@@ -1,0 +1,20 @@
+
+$dartmouth-green: #00693e;
+$dartmouth-light: lighten($dartmouth-green, 5%);
+$dartmouth-dark: darken($dartmouth-green, 10%);
+
+
+$google-blue: #1155d5;
+//$google-blue: #33aaff
+$grey: #e6e6e6;
+
+$body-background-color: $dartmouth-green;
+$link: $google-blue;
+$primary: $dartmouth-green;
+
+$family-serif: "Crimson Text", serif;
+$family-primary: $family-serif !default;
+
+//$table-cell-border: none;
+$content-table-cell-border: none;
+$content-table-cell-padding: 0em 0.75em;
