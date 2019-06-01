@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use CreateDancesTable;
+use function view;
 
 class UploadFileController extends Controller
 {
@@ -20,24 +21,11 @@ class UploadFileController extends Controller
     {
         $file = $request->file('image');
 
-        //Display File Name
-        echo 'File Name: ' . $file->getClientOriginalName();
-        echo '<br>';
-
-        //Display File Extension
-        echo 'File Extension: ' . $file->getClientOriginalExtension();
-        echo '<br>';
-
-        //Display File Real Path
-        echo 'File Real Path: ' . $file->getRealPath();
-        echo '<br>';
-
-        //Display File Size
-        echo 'File Size: ' . $file->getSize();
-        echo '<br>';
-
-        //Display File Mime Type
-        echo 'File Mime Type: ' . $file->getMimeType();
+        $fileName = $file->getClientOriginalName();
+        $fileExtension =  $file->getClientOriginalExtension();
+        $fileRealPath = $file->getRealPath();
+        $fileSize = $file->getSize();
+        $fileMimeType = $file->getMimeType();
 
         //Move Uploaded File
         $destinationPath = 'uploads';
@@ -56,6 +44,15 @@ class UploadFileController extends Controller
 
         DanceTableHelper::loadDancesTable($table);
 
+        return view('uploadfile',
+            [
+                'fileName' => $fileName,
+                'fileExtension' => $fileExtension,
+                'fileRealPath' => $fileRealPath,
+                'fileSize' => $fileSize,
+                'fileMimeType' => $fileMimeType
+            ]);
+
 
     }
 
@@ -63,7 +60,7 @@ class UploadFileController extends Controller
     {
         Schema::dropIfExists('dances');
 
-        Schema::create('dances', function (Blueprint $table){
+        Schema::create('dances', function (Blueprint $table) {
             DanceTableHelper::createTable($table);
         });
     }
