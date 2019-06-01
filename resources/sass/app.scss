@@ -56,6 +56,13 @@
     color: #fff;
     font-size: 1.5rem;
     padding: 0 0.75rem;
+    margin: 0 1px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px 1px 0 1px ;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
   }
 
   a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover,
@@ -63,6 +70,7 @@
   .navbar-link:hover, .navbar-link.is-active {
     background-color: $dartmouth-green;
     color: $dartmouth-dark;
+    border-color: $dartmouth-dark;
   }
 
 
