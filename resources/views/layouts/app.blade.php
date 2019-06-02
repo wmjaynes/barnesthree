@@ -33,9 +33,6 @@
 
         @yield('content')
     </div>
-    <!-- Scripts -->
-{{--    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js"></script>--}}
-    <script src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>
