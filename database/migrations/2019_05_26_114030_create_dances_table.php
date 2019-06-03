@@ -1,5 +1,6 @@
 <?php
 
+use App\DanceTableHelper;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,8 +15,7 @@ class CreateDancesTable extends Migration
     public function up()
     {
         Schema::create('dances', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            DanceTableHelper::createTable($table);
         });
     }
 
