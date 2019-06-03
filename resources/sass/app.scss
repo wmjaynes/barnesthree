@@ -22,56 +22,67 @@
   }
 }
 
-  .container {
-    margin: 0 1rem;
-  }
+.container {
+  margin: 0 1rem;
+}
 
-  .content table {
-    width: auto;
-    margin-left: 2%;
-  }
+.content table {
+  width: auto;
+  margin-left: 2%;
+}
 
-  .navbar {
-    background-color: $dartmouth-light;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    padding-left: 1rem;
-  }
+.navbar {
+  background-color: $dartmouth-green;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding-left: 1rem;
+}
 
-  .navbar-brand, .navbar-tabs {
-    min-height: 2.25rem;
-    //background-color: $dartmouth-light;
-  }
+.navbar-brand, .navbar-tabs {
+  min-height: 2.25rem;
+  //background-color: $dartmouth-light;
+}
 
-  @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
+  a.navbar-item.is-active:not(:focus):not(:hover), .navbar-link.is-active:not(:focus):not(:hover) {
+    background-color: white;
   }
+}
 
-  .navbar {
-    min-height: 2.25rem;
-  }
+a.navbar-item.is-active {
+  background-color: white;
+}
+
+.navbar {
+  min-height: 2.25rem;
+}
 
 
-  .navbar-item {
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 0 0.75rem;
-    margin: 0 1px;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px 1px 0 1px ;
-    -webkit-border-radius: 6px 6px 0 0;
-    -moz-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0;
-  }
+.navbar-item {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0 0.75rem;
+  margin: 0 1px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px 1px 0 1px;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+}
 
-  a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover,
-  a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within,
-  .navbar-link:hover, .navbar-link.is-active {
-    background-color: $dartmouth-green;
-    color: $dartmouth-dark;
-    border-color: $dartmouth-dark;
-  }
+a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover,
+a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within,
+.navbar-link:hover, .navbar-link.is-active {
+  background-color: $dartmouth-green;
+  color: $dartmouth-dark;
+  border-color: $dartmouth-dark;
+}
+
+.navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
+  background-color: white;
+}
 
 
 

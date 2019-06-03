@@ -14,25 +14,32 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <figure class="image">
-            <img src="/images/greenbarnesheader-1200.jpg" class="img-fluid">
-        </figure>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a class="navbar-item active" href="{{ route('about') }}">About</a>
-                <a class="navbar-item" href="{{ route('dances') }}">Dances</a>
-            </div>
-        </nav>
+    <figure class="image">
+        <img src="/images/greenbarnesheader-1200.jpg" class="img-fluid">
+    </figure>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a id="navbar-about" class="navbar-item" href="{{ route('about') }}">About</a>
+            <a id="navbar-dances" class="navbar-item" href="{{ route('dances') }}">Dances</a>
+        </div>
+    </nav>
 
 
+    @yield('content')
+</div>
 
-        @yield('content')
-    </div>
+<script>
+    if(window.location.href.indexOf("about") > -1) {
+        document.getElementById("navbar-about").classList.add('is-active');
+    }
+    if(window.location.href.indexOf("dances") > -1) {
+        document.getElementById("navbar-dances").classList.add('is-active');
+    }
+</script>
 
 </body>
 </html>
