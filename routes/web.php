@@ -11,13 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('about');
-});
+Route::redirect('/', 'about');
 
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/about', 'about')->name('about');
 //Route::view('/test', 'test')->name('test');
