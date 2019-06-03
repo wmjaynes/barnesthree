@@ -50,9 +50,7 @@
   }
 }
 
-a.navbar-item.is-active {
-  background-color: white;
-}
+
 
 .navbar {
   min-height: 2.25rem;
@@ -81,6 +79,10 @@ a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within,
 }
 
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
+  background-color: white;
+}
+
+a.navbar-item.is-active {
   background-color: white;
 }
 
