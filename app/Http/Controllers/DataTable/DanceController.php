@@ -8,6 +8,7 @@ use App\Plan;
 use function explode;
 use Illuminate\Http\Request;
 use function implode;
+use function preg_replace;
 use function sizeof;
 use function strpos;
 
@@ -26,6 +27,7 @@ class DanceController extends DataTableController
             $titles = explode('/', $record->title);
             $titlesStr = implode('<br>', $titles);
             $titleLink = $record->title_sort;
+            $titleLink = preg_replace("/[^a-zA-Z0-9]/", "", $titleLink);
 
             if (strpos($record->status, "approved") === 0) {
 
