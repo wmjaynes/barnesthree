@@ -6,6 +6,7 @@ use function explode;
 use function file_exists;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use function preg_replace;
 use function preg_replace_array;
 use function strpos;
 use function view;
@@ -14,12 +15,11 @@ class DirectionsController extends Controller
 {
     public function show($name)
     {
+        $filename = $name;
         if (strpos($name, '/') !== false) {
             $names = explode('/', $name);
-            $name = $names[0];
+            $filename = $names[0];
         }
-        $filename = preg_replace("/^(The |A |An )/", "", ucwords($name));
-        $filename = preg_replace("/[^a-zA-Z0-9]/", "", $filename);
 
         $filename = "/" . $filename . "/" . $filename . ".pdf";
 

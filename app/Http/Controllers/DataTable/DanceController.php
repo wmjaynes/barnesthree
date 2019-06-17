@@ -26,7 +26,12 @@ class DanceController extends DataTableController
 
             $titles = explode('/', $record->title);
             $titlesStr = implode('<br>', $titles);
-            $titleLink = $record->title_sort;
+            $titleLink = ucwords($record->title_sort);
+//            $titleLink = preg_replace(
+//                array('/ a /','/ an /', '/ at /','/ for /','/ to /','/ of /','/ the /','/ in /'),
+//                array(' A ',' An ', ' At ',' For ', ' To ',' Of ',' The ',' In '),
+//                $titleLink
+//            );
             $titleLink = preg_replace("/[^a-zA-Z0-9]/", "", $titleLink);
 
             if (strpos($record->status, "approved") === 0) {
