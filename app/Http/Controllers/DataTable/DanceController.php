@@ -110,7 +110,6 @@ class DanceController extends DataTableController
             'key' => 'Key',
             'composer' => 'Composer/<br>Publisher',
             'tune_form' => 'Tune Form',
-            'meter' => 'Meter',
             'source' => 'Source',
             'comment' => 'Comment',
             'meter' => 'Meter',
