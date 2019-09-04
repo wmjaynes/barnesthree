@@ -63,7 +63,7 @@ class DanceController extends DataTableController
     {
         return ['status',
             'title_sort', 'title', 'chor_pub_sort', 'chor_pub',  'date','reconstruction', 'source', 'source_url',
-            'dance_form','tune_sort', 'tune', 'composer_sort', 'composer',  'meter', 'key',
+            'dance_form','tune_sort', 'tune', 'composer_sort', 'composer',  'meter', 'tempo', 'key',
             'tune_form', 'comment', 'page', 'difficulty', 'energy'
         ];
     }
@@ -110,7 +110,7 @@ class DanceController extends DataTableController
             'key' => 'Key',
             'composer' => 'Composer/<br>Publisher',
             'tune_form' => 'Tune Form',
-            'Meter' => 'Meter',
+            'meter' => 'Meter',
             'source' => 'Source',
             'comment' => 'Comment',
             'meter' => 'Meter',
@@ -118,6 +118,7 @@ class DanceController extends DataTableController
             'difficulty'=> 'Difficulty',
             'energy' => 'Energy',
             'page' => 'Page',
+            'tempo' => 'Tempo'
         ];
     }
 
